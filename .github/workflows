@@ -1,0 +1,27 @@
+# .github/workflows/deploy.yml
+name: Deploy WhatsApp Bot
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: ⚙️ Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.20.8
+
+    - name: 📦 Install Dependencies
+      run: npm install
+
+    - name: 🚀 Jalankan Bot (Local)
+      run: |
+        echo "Simulasi jalankan bot: node index.js"
+        echo "🔔 Tambahkan deploy ke server SSH atau PM2 di bawah sini"
